@@ -10,7 +10,17 @@
 <meta name="description" content="সনাতন টিভি'র ১১ তম প্রতিষ্ঠা বার্ষিকী ফটো ফ্রেম — ছবি আপলোড করুন, নাম ও পদবী যোগ করুন, Full HD ডাউনলোড করুন।">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@400;700&family=Atma:wght@400;700&family=Baloo+Da+2:wght@400;700&family=Galada&family=Hind+Siliguri:wght@400;500;600;700&family=Mina:wght@400;700&family=Noto+Sans+Bengali:wght@400;700&family=Noto+Serif+Bengali:wght@400;700&family=Tiro+Bangla&display=swap" rel="stylesheet">
+<!-- Popular Bangla fonts (SolaimanLipi, Kalpurush, Nikosh …) via fonts.maateen.me -->
+<link href="https://fonts.maateen.me/solaiman-lipi/font.css" rel="stylesheet">
+<link href="https://fonts.maateen.me/kalpurush/font.css" rel="stylesheet">
+<link href="https://fonts.maateen.me/siyam-rupali/font.css" rel="stylesheet">
+<link href="https://fonts.maateen.me/adorsho-lipi/font.css" rel="stylesheet">
+<link href="https://fonts.maateen.me/mukti/font.css" rel="stylesheet">
+<style>/* Nikosh is self-hosted: the CDN copy fails to load in Chrome */
+@font-face{font-family:'Nikosh';font-display:swap;font-weight:100 900;src:url('fonts/nikosh.woff2') format('woff2')}</style>
+<link href="https://fonts.maateen.me/bensen-handwriting/font.css" rel="stylesheet">
+<link href="https://fonts.maateen.me/charukola-ultra-light/font.css" rel="stylesheet">
 <style>
   :root{
     --green:#0b3d2a; --green-2:#125a3f; --yellow:#ffd21a; --blue:#0e47a0;
@@ -118,6 +128,18 @@
   .s-minimal .n{color:#0b3d2a;font-size:12px} .s-minimal .t{color:#14201b} .s-minimal .w i{display:block;width:18px;height:2px;background:#0e47a0;border-radius:1px;margin:1px 0}
   .s-outline .w{border:2px solid #0b3d2a;border-radius:6px;padding:4px 9px;background:rgba(255,255,255,.35)} .s-outline .n{color:#0b3d2a} .s-outline .t{color:#0b3d2a}
 
+  /* font chooser */
+  .fonts{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(-1 * 14px);padding:2px 14px 6px;scrollbar-width:none}
+  .fonts::-webkit-scrollbar{display:none}
+  .fc{flex:0 0 116px;scroll-snap-align:start;border:2px solid var(--line);border-radius:12px;background:#fff;cursor:pointer;padding:8px 6px 6px;text-align:center;font:inherit;color:var(--text);transition:.15s;min-width:0}
+  .fc .smp{display:block;font-size:20px;line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .fc .nm{display:block;font-family:"Hind Siliguri",sans-serif;font-size:11.5px;color:var(--muted);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .fc.on{border-color:var(--green);box-shadow:0 0 0 3px rgba(11,61,42,.10)}
+  .fc.on .nm{color:var(--green)}
+  .fc.add{border-style:dashed;color:var(--green);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px}
+  .fc.add svg.i{width:22px;height:22px}
+  .fnote{font-size:12px;color:var(--muted);margin:6px 0 0}
+
   .sizerow{display:flex;align-items:center;gap:10px;margin-top:10px}
   .sizerow .lbl{font-size:13px;font-weight:600;color:var(--muted);white-space:nowrap}
   .val{font-size:12.5px;color:var(--muted);min-width:40px;text-align:right;font-variant-numeric:tabular-nums}
@@ -147,6 +169,8 @@
     .preview{padding:14px}
     .styles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0;padding:2px 0 6px;overflow:visible}
     .sw{min-width:0;padding:5px;font-size:12px}
+    .fonts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));margin:0;padding:2px 4px 6px 2px;overflow-x:hidden;overflow-y:auto;max-height:292px;scrollbar-width:thin}
+    .fc{flex:none}
   }
   @media (min-width:920px){
     body{padding-bottom:0}
@@ -175,6 +199,7 @@
   <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
   <symbol id="i-brief" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></symbol>
   <symbol id="i-download" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><path d="m7 10 5 5 5-5"/><path d="M12 15V3"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
   <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
   <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></symbol>
 </svg>
@@ -237,6 +262,12 @@
           <div class="inp"><svg class="i"><use href="#i-brief"/></svg><input type="text" id="title" placeholder="যেমন: বিজ্ঞাপন দাতা" maxlength="80" autocomplete="organization-title"></div>
         </div>
         <div class="field">
+          <label>ফন্ট</label>
+          <div class="fonts" id="fonts"></div>
+          <p class="fnote">তালিকায় নেই? নিজের ফন্ট (.ttf / .otf / .woff) আপলোড করুন।</p>
+          <input type="file" id="fontFile" accept=".ttf,.otf,.woff,.woff2,font/ttf,font/otf,font/woff,font/woff2">
+        </div>
+        <div class="field">
           <label>স্টাইল</label>
           <div class="styles" id="styles"></div>
         </div>
@@ -267,7 +298,30 @@
   const SIZE = 2048;
   const WIN = { x: 1237, y: 635, w: 760, h: 841, r: 46 };  // photo window (former white box)
   const TEXT_CX = 1590, TEXT_TOP = 1552, TEXT_MID = 1660, MAX_W = 790;
-  const FONT = '"Hind Siliguri", sans-serif';
+  const UI_FONT = '"Hind Siliguri", sans-serif';
+  let FONT = UI_FONT;                       // font used for name / title
+  let fontScale = 1;                        // per-font size correction
+  const BN_SAMPLE = 'অআকখগঘনামপদবীরায়দাতা';
+
+  const FONTS = [
+    { label:'হিন্দ শিলিগুড়ি', family:'Hind Siliguri' },
+    { label:'সোলাইমানলিপি',  family:'SolaimanLipi' },
+    { label:'কালপুরুষ',       family:'Kalpurush' },
+    { label:'নিকস',           family:'Nikosh', scale:1.35 },   // Nikosh glyphs are small by design
+    { label:'সিয়াম রুপালী',   family:'Siyam Rupali' },
+    { label:'আদর্শ লিপি',     family:'Adorsho Lipi' },
+    { label:'মুক্তি',          family:'Mukti' },
+    { label:'নোটো সান্স',     family:'Noto Sans Bengali' },
+    { label:'নোটো সেরিফ',    family:'Noto Serif Bengali' },
+    { label:'তিরো বাংলা',     family:'Tiro Bangla' },
+    { label:'অনেক বাংলা',     family:'Anek Bangla' },
+    { label:'বালু দা',         family:'Baloo Da 2' },
+    { label:'গালাদা',          family:'Galada' },
+    { label:'আত্মা',           family:'Atma' },
+    { label:'মিনা',            family:'Mina' },
+    { label:'বেনসেন হাতের লেখা', family:'BenSen Handwriting' },
+    { label:'চারুকলা',         family:'Charukola Ultra Light' },
+  ];
 
   const STYLES = [
     { id:'plain',   label:'সাধারণ' },
@@ -330,7 +384,7 @@
   function drawText(c){
     const name = $('name').value.trim(), title = $('title').value.trim();
     if(!name && !title) return;
-    const k = +$('tsize').value, id = STYLES[styleIdx].id;
+    const k = +$('tsize').value * fontScale, id = STYLES[styleIdx].id;
     const padX = 54*k, inner = MAX_W - padX*2;
     const N = fitFont(c, name, Math.round(76*k), 700, inner);
     const T = fitFont(c, title, Math.round(46*k), 600, inner);
@@ -401,8 +455,8 @@
       c.save(); c.translate(cx-60, cy-140); c.scale(5,5);
       c.strokeStyle = '#8a9a92'; c.lineWidth = 1.6; c.lineCap = c.lineJoin = 'round'; c.stroke(IMG_ICON); c.restore();
       c.fillStyle = '#5f6f67'; c.textAlign = 'center'; c.textBaseline = 'middle';
-      c.font = `600 50px ${FONT}`; c.fillText('আপনার ছবি এখানে', cx, cy + 60);
-      c.font = `500 34px ${FONT}`; c.fillStyle = '#8a9a92'; c.fillText('ট্যাপ করে আপলোড করুন', cx, cy + 124);
+      c.font = `600 50px ${UI_FONT}`; c.fillText('আপনার ছবি এখানে', cx, cy + 60);
+      c.font = `500 34px ${UI_FONT}`; c.fillStyle = '#8a9a92'; c.fillText('ট্যাপ করে আপলোড করুন', cx, cy + 124);
     }
     c.restore();
     if (frame.complete && frame.naturalWidth) c.drawImage(frame, 0, 0, SIZE, SIZE);
@@ -491,12 +545,69 @@
     };
     sbox.appendChild(b);
   });
+  // ---------- fonts ----------
+  const fbox = $('fonts');
+  const loadFont = fam => document.fonts
+    ? Promise.all([document.fonts.load(`700 60px "${fam}"`, BN_SAMPLE), document.fonts.load(`600 40px "${fam}"`, BN_SAMPLE)]).catch(() => {})
+    : Promise.resolve();
+  let fontReq = 0;
+  async function selectFont(fam, chip, scale = 1){
+    fontScale = scale;
+    fbox.querySelectorAll('.fc').forEach(x => { x.classList.remove('on'); x.setAttribute('aria-pressed', false); });
+    if (chip){ chip.classList.add('on'); chip.setAttribute('aria-pressed', true); }
+    const req = ++fontReq;
+    FONT = `"${fam}", ${UI_FONT}`;
+    draw();
+    await loadFont(fam);
+    if (req === fontReq) draw();
+  }
+  function addFontChip(f, before){
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'fc'; b.setAttribute('aria-pressed', false); b.title = f.family;
+    b.innerHTML = `<span class="smp"></span><span class="nm"></span>`;
+    b.firstChild.textContent = 'নাম পদবী';
+    b.firstChild.style.fontFamily = `"${f.family}", ${UI_FONT}`;
+    b.lastChild.textContent = f.label;
+    if (f.scale) b.firstChild.style.fontSize = `${20 * f.scale}px`;
+    b.onclick = () => selectFont(f.family, b, f.scale || 1);
+    fbox.insertBefore(b, before || null);
+    return b;
+  }
+  FONTS.forEach(f => addFontChip(f));
+  fbox.firstChild.classList.add('on'); fbox.firstChild.setAttribute('aria-pressed', true);
+
+  // upload your own font (e.g. Li Shohid Abu Sayed, SutonnyMJ unicode …)
+  const addBtn = document.createElement('button');
+  addBtn.type = 'button'; addBtn.className = 'fc add';
+  addBtn.innerHTML = `<svg class="i"><use href="#i-plus"/></svg><span class="nm">ফন্ট আপলোড</span>`;
+  addBtn.onclick = () => $('fontFile').click();
+  fbox.appendChild(addBtn);
+  let customN = 0;
+  $('fontFile').addEventListener('change', async e => {
+    const file = e.target.files[0]; e.target.value = '';
+    if (!file) return;
+    try {
+      const fam = `UserFont${++customN}`;
+      const face = new FontFace(fam, await file.arrayBuffer());
+      await face.load();
+      document.fonts.add(face);
+      const label = file.name.replace(/\.(ttf|otf|woff2?)$/i, '').slice(0, 24);
+      const chip = addFontChip({ family: fam, label }, addBtn);
+      selectFont(fam, chip);
+      chip.scrollIntoView({ block:'nearest', inline:'nearest' });
+      toast('ফন্ট যোগ হয়েছে');
+    } catch (err){
+      toast('ফন্টটি খোলা যায়নি (.ttf / .otf / .woff দিন)', 'err');
+    }
+  });
+
   ['name','title'].forEach(id => $(id).addEventListener('input', draw));
   $('tsize').addEventListener('input', e => { $('tsizeVal').textContent = Math.round(e.target.value*100) + '%'; draw(); });
 
   // ---------- download ----------
-  function download(type){
+  async function download(type){
     if (!photo){ toast('আগে একটি ছবি আপলোড করুন', 'err'); return; }
+    if (document.fonts) await document.fonts.ready;
     const out = document.createElement('canvas'); out.width = out.height = SIZE;
     render(out.getContext('2d'), false);
     const base = ($('name').value.trim() || 'stv-frame').replace(/[\\/:*?"<>|]+/g, '').slice(0, 40);
