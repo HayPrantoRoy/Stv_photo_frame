@@ -111,6 +111,7 @@
   .pv .w{display:flex;flex-direction:column;align-items:center;gap:2px;line-height:1}
   .pv .n{font-size:11px;font-weight:700}
   .pv .t{font-size:8px;font-weight:600}
+  .s-plain .n{color:#0b3d2a;font-size:12px} .s-plain .t{color:#14201b}
   .s-card .w{background:#fff;border-radius:6px;padding:5px 9px;box-shadow:0 2px 6px rgba(0,0,0,.15)} .s-card .n{color:#0b3d2a} .s-card .t{color:#0e47a0}
   .s-solid .n{background:#0b3d2a;color:#fff;border-radius:5px;padding:4px 9px} .s-solid .t{color:#0b3d2a;margin-top:2px}
   .s-split .w{gap:0;border-radius:6px;overflow:hidden;box-shadow:0 2px 6px rgba(0,0,0,.15)} .s-split .n{background:#0e47a0;color:#fff;padding:4px 10px;width:100%;text-align:center} .s-split .t{background:#fff;color:#0e47a0;padding:3px 10px;width:100%;text-align:center}
@@ -144,7 +145,7 @@
     .brand h1{font-size:19px}
     .card{padding:18px}
     .preview{padding:14px}
-    .styles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin:0;padding:2px 0 6px;overflow:visible}
+    .styles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin:0;padding:2px 0 6px;overflow:visible}
     .sw{min-width:0;padding:5px;font-size:12px}
   }
   @media (min-width:920px){
@@ -269,6 +270,7 @@
   const FONT = '"Hind Siliguri", sans-serif';
 
   const STYLES = [
+    { id:'plain',   label:'সাধারণ' },
     { id:'card',    label:'কার্ড' },
     { id:'solid',   label:'সলিড' },
     { id:'split',   label:'স্প্লিট' },
@@ -366,6 +368,12 @@
         txt(c, name, N, '#ffffff', TEXT_CX, y0 + nb/2);
       }
       if (title) txt(c, title, T, '#0e47a0', TEXT_CX, y0 + nb + tb/2);
+    }
+    else if (id === 'plain'){
+      const gap = name && title ? 6*k : 0;
+      const h = nh + gap + th, y0 = Math.max(TEXT_TOP, TEXT_MID - h/2);
+      if (name)  txt(c, name,  N, '#0b3d2a', TEXT_CX, y0 + nh/2);
+      if (title) txt(c, title, T, '#14201b', TEXT_CX, y0 + nh + gap + th/2);
     }
     else { // minimal
       const lineGap = name && title ? 30*k : 0;
